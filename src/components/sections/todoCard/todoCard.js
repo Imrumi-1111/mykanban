@@ -15,9 +15,13 @@ export default function TodoCard() {
   }
 
   function handleTodoList(event) {
-    if (event.key === 'Enter') {
-      handleAddItems(event.target.value);
-      event.target.value = '';
+    if (event.keyCode === 13) {
+      alert("")
+      const newItemText = event.target.value.trim();
+      if (newItemText !== '') {
+        handleAddItems(newItemText);
+        event.target.value = '';
+      }
     }
   }
 
@@ -30,7 +34,11 @@ export default function TodoCard() {
           </button>
         </div>
       )}
-      {showList && <TodoList onEnterKeyPress={handleTodoList} items={todoItems} />}
+      {showList && (
+        <div>
+          <TodoList onKeyDown={handleTodoList} items={todoItems} />
+        </div>
+      )}
     </div>
   );
 }
