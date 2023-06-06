@@ -11,16 +11,33 @@
     border-radius: 0.5rem;
 }
 .list{
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
     border: 1px solid whitesmoke;
     width: 12rem;
     background-color: aliceblue;
 }
 .field{
-    margin-top: 1rem;
+    margin-top: 1px;
+    margin-left: 5%;
+    margin-right: 5%;
     border: 1px solid whitesmoke;
     background-color: aliceblue;
     width: 12rem;
+    color: burlywood;
 }
 .field:focus{
     outline: none;
+}
+.listTodo{
+    margin-top: 1px;
+    margin-left: 5%;
+    margin-right: 5%;
+    border: 1rem solid whitesmoke;
+    border: 1px solid whitesmoke;
+    background-color: aliceblue;
+    width: 12.25rem;
+    color: burlywood;
+
 }
