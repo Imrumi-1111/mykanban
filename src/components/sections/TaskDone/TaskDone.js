@@ -5,6 +5,7 @@ import {RiDeleteBin5Fill} from "react-icons/ri"
 import {BiCommentAdd} from "react-icons/bi" 
 import { ClockLoader } from 'react-spinners'
 import {MdCloudDone} from "react-icons/md"
+import { v4 as uuidv4 } from "uuid";
 
 
 export default function TaskDone() {
@@ -84,7 +85,7 @@ export default function TaskDone() {
           {
         lis.map((ele,index)=>{
           return(
-            <div key={index} className={styles.singleTaskContainer}>
+            <div key={uuidv4()} className={styles.singleTaskContainer}>
               
               <p  className={styles.singleTask} >{ele}</p>
               <button onClick={()=>handleToDelete(index)} className={styles.delButton}><RiDeleteBin5Fill/></button>
