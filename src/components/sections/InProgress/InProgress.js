@@ -76,7 +76,7 @@ export default function InProgress() {
       <GiProgression className={styles.logo}/>
       
         <div className={styles.container1}>    
-      <input placeholder="In Progress " className={styles.field1}></input>
+      <input placeholder="    In Progress " className={styles.field1}></input>
       <button className={styles.moreoption}><SlOptions/></button>
       </div>
 
