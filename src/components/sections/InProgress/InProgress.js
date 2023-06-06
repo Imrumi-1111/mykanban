@@ -5,7 +5,7 @@ import {RiDeleteBin5Fill} from "react-icons/ri"
 import {BiCommentAdd} from "react-icons/bi" 
 import { ClockLoader } from 'react-spinners'
 import {GiProgression} from "react-icons/gi"
-
+import { v4 as uuidv4 } from "uuid";
 
 export default function InProgress() {
   const[wantToSeeList,setWantToSeeList]=useState(false)
@@ -21,7 +21,7 @@ export default function InProgress() {
     function handleToDelete(indexNum){
       const filteredData=lis.filter((ele,index)=>index!==indexNum);
         setLis(filteredData);
-        localStorage.setItem("Task_In_Progress",filteredData)
+        localStorage.setItem("Task_In_Progress",JSON.stringify(filteredData))
         
 
     }
@@ -40,7 +40,7 @@ export default function InProgress() {
       else{const data=[workinProgress,...lis]
       setLis(data)
       setWorkinProgress("")
-      localStorage.setItem("Task_In_Progress",data)
+      localStorage.setItem("Task_In_Progress",JSON.stringify(data))
       }   
 
     }
@@ -54,10 +54,13 @@ export default function InProgress() {
           alert("Already")
           setWorkinProgress("")
         }
-        else{const data=[workinProgress,...lis]
+        else{
+          
+          const data=[workinProgress,...lis]
+
         setLis(data)
         setWorkinProgress("")
-        localStorage.setItem("Task_In_Progress",data)
+        localStorage.setItem("Task_In_Progress",JSON.stringify(data))
         }   
   
 
@@ -84,7 +87,7 @@ export default function InProgress() {
           {
         lis.map((ele,index)=>{
           return(
-            <div key={index} className={styles.singleTaskContainer}>
+            <div key={uuidv4()} className={styles.singleTaskContainer}>
               
               <p  className={styles.singleTask} >{ele}</p>
               <button onClick={()=>handleToDelete(index)} className={styles.delButton}><RiDeleteBin5Fill/></button>
