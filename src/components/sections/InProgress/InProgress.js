@@ -6,8 +6,9 @@ import {BiCommentAdd} from "react-icons/bi"
 import { ClockLoader } from 'react-spinners'
 import {GiProgression} from "react-icons/gi"
 import { v4 as uuidv4 } from "uuid";
+//import { Link } from 'react-router-dom'
 
-export default function InProgress() {
+export default function InProgress({item}) {
   const[wantToSeeList,setWantToSeeList]=useState(false)
   //const[moreAdd,setMoreAdd]=useState(false)
     const[workinProgress,setWorkinProgress]=useState("")
@@ -87,8 +88,9 @@ export default function InProgress() {
           {
         lis.map((ele,index)=>{
           return(
+            
             <div key={uuidv4()} className={styles.singleTaskContainer}>
-              
+              {/* <Link to={`/details/${item.id}`}>{item.title}</Link> */}
               <p  className={styles.singleTask} >{ele}</p>
               <button onClick={()=>handleToDelete(index)} className={styles.delButton}><RiDeleteBin5Fill/></button>
               

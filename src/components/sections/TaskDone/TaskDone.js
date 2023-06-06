@@ -6,9 +6,10 @@ import {BiCommentAdd} from "react-icons/bi"
 import { ClockLoader } from 'react-spinners'
 import {MdCloudDone} from "react-icons/md"
 import { v4 as uuidv4 } from "uuid";
+//import { Link } from 'react-router-dom'
 
 
-export default function TaskDone() {
+export default function TaskDone({item}) {
   const[wantToSeeList,setWantToSeeList]=useState(false)
   //const[moreAdd,setMoreAdd]=useState(false)
     const[workinProgress,setWorkinProgress]=useState("")
@@ -66,7 +67,7 @@ export default function TaskDone() {
     }
   return (
     <div className={styles.main} >
-      
+      {/* <Link to={`/details/${item.id}`}>{item.title}</Link> */}
      { !wantToSeeList ?<div className={styles.bluff_container}>
      <button className={styles.bluffbutton} onClick={handleToView}>Add a List</button>
      <br/>

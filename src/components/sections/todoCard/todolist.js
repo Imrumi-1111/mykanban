@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import styles from './todolist.module.css';
-
 export default function TodoList() {
   const [items, setItems] = useState([]);
-
-  function handleEnterKeyPress(event) {
+    function handleEnterKeyPress(event) {
     if (event.key === 'Enter') {
       const newItem = event.target.value.trim();
       if (newItem !== '') {

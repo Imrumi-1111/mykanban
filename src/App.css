@@ -1,6 +1,5 @@
 body{
-  background-image: url("../public/image.jpg");
-  
+  background-image: url("../public/image.jpg"); 
 } 
 .content{
   display: flex;
